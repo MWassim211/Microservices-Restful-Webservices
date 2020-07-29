@@ -80,7 +80,7 @@ public class UserJpaResource {
         Optional<User> userOptional =  UserRepository.findById(id);
         if (!userOptional.isPresent()){
             throw new UserNotFoundExecption("id-" +id);
-        }
+        }   
         User user = userOptional.get();
         post.setUser(user);
         postRepository.save(post);
